@@ -1,0 +1,173 @@
+\documentclass{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\textheight=10in
+\pagestyle{empty}
+%\raggedbottom
+\raggedright
+
+%  \renewcommand{\encodingdefault}{cg}
+  %\renewcommand{\rmdefault}{lgrcmr}
+
+\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+% DEFINITIONS FOR RESUME
+\newcommand{\area}[2]{\vspace*{-9pt} \begin{verse}\textbf{#1}   #2 \end{verse}  }
+\newcommand{\lineunder}{\vspace*{-8pt} \\ \hspace*{-18pt} \hrulefill \\}
+\newcommand{\header}[1]{{\hspace*{-15pt}\vspace*{6pt} \textsc{#1}} \vspace*{-6pt} \lineunder}
+\newcommand{\employer}[2]{{ \textbf{#1} (#2)\\  }}
+	\newcommand{\position}[2]{\textbf{\emph{#1}} \emph{#2} \\ }
+\newcommand{\contact}[3]{
+\vspace*{-8pt}
+\begin{center}
+{\LARGE \scshape {#1}} \\
+#2 $\bullet$ #3
+\lineunder
+\end{center}
+\vspace*{-8pt}
+}
+\newenvironment{worklist}{\begin{list}{$\bullet$}{\topsep 0pt \itemsep -2pt}}{\vspace*{0pt}\end{list}}
+\newenvironment{achievements}{\begin{list}{$\bullet$}{\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}\end{list}}
+\newcommand{\schoolwithcourses}[4]{
+ \textbf{#1} #2 \\ #3\\ 
+#4 Selected Coursework:\\
+\vspace*{5pt}
+}
+\newcommand{\school}[4]{
+ \textbf{#1} #2 \\ #3\\ 
+#4 \\
+}
+% END RESUME DEFINITIONS
+
+\begin{document}
+
+\small
+\smallskip
+\vspace*{-44pt}
+
+\contact{Evan H. Anders}
+{4998 Moorhead Ave. Apt. 206, Boulder, CO 80305}
+{(509) 481-1122 $\bullet$ evan.anders@colorado.edu}
+
+
+
+\header{Education}
+
+
+\schoolwithcourses{University of Colorado}{Boulder, CO, U.S.A.}{Ph. D. in Astrophysical and Planetary Sciences $\cdot$ Entry Date: August 2014}
+{ }
+	\area{Core Courses}{
+Atomic \& Molecular Processes $\cdot$ Mathematical Methods $\cdot$ Intro Fluid Dynamics (IP) $\cdot$ Observations \& Statistics (IP)
+}
+	\area{Electives}{ 
+Cosmochemistry $\cdot$ Intro Plasma Physics (IP)
+ \\\raggedleft{\emph{(IP) signifies course is in progress during Spring 2015 semester}}}
+
+
+\school{Whitworth University}{Spokane, WA, U.S.A.}{Bachelor of Science in Physics with Mathematics and Computer Science minors $\cdot$ Graduated May 2014}
+{Cumulative GPA: 4.00/4.00}
+\raggedright
+
+
+
+\raggedright
+
+
+
+
+\header{Experience}
+
+\employer{University of Colorado - Boulder}{August 2014 - Present}
+\position{ASTR 1010 Teaching Assistant}{$\cdot$ Lab (Fall 2014) $\cdot$ Lab \& Lecture (Spring 2015)}
+	\begin{achievements}
+	\item Teach important laboratory concepts in short mini-lectures
+	\item Assist students individually in reaching laboratory goals
+	\item Provide conceptual help to interested students by holding office hours
+	\item Grade weekly assignments and provide feedback
+	\end{achievements}
+
+
+\employer{LIGO (Laser Interferometer Gravitational-Wave Observatory) Hanford Observatory}{Summer 2013}
+\position{NSF SURF Fellow}{$\cdot$ Project: Spectral Line Monitoring  Tool (SLM)}
+	\begin{achievements}
+	\item Analyzed calibration data for LIGO using Fast Fourier Transforms by developing a new Python routine
+	\item Studied the behavior of the Discrete Fourier Transform when applied to signals buried in Gaussian noise
+	\item Researched past LIGO data to determine photon calibration consistency between input and output channels
+	\end{achievements}
+
+\employer{Pacific Northwest National Laboratory (PNNL)}{Summer 2012}
+\position{DOE SULI Intern}{$\cdot$ Project: Global Arrays in NumPy (GAiN)}
+	\begin{achievements}
+	\item Optimized existing functions in GAiN, a Python module which applies PNNL's Global Arrays parallel programming toolkit to the NumPy Python module
+	\item Designed new parallel algorithms for the GAiN `reduce' function
+	\item Developed foundation of GAiN `master-slave' interface
+	\item Benchmarked GAiN's functions, comparing their performance to an MPI-based NumPy implementation
+	\end{achievements}
+
+\employer{Whitworth University}{2011 - 2014}
+\position{Computational Physics Teaching Assistant}{(January 2014)}
+	\begin{worklist}
+	\item Assisted students in translating mathematical operations into numerical algorithms
+	\item Guided students in designing computational models of physical phenomena
+	\end{worklist}
+
+\position{Physics Lab Teaching Assistant}{(Fall 2011 - Spring 2012)}
+	\begin{worklist}
+	\item Instructed students through the completion of laboratory activities
+	\item Reviewed and graded students' notebooks to help improve laboratory practices
+	\end{worklist}
+
+\position{Physics Tutor}{(Fall 2012 - May 2014)}
+	\begin{worklist}
+	\item Reviewed basic concepts with students to help improve problem-solving skills
+	\item Provided supplemental instruction to assist students in the clarification of course material
+	\end{worklist}
+
+\position{Mathematics Grader}{(Spring 2012 - Spring 2013)}
+	\begin{worklist}
+	\item Reviewed and corrected homework assignments, leaving feedback to clarify concepts
+	\item Graded for the following courses: Discrete Mathematics, Calculus I, and Calculus II
+	\end{worklist}
+
+\position{Class Projects}{}
+	\begin{achievements}
+	\item \emph{Electricity and Magnetism:} Designed and constructed an experiment for measuring atmospheric ozone content with visible light.  An insulated pod with a small fan for airflow contained an integrating sphere which was used to measure the intensity of red and green light.  Using recorded voltages and the absorption cross-sections of the various consituents of air, the content of ozone is determinable; unfortunately, due to unfavorable launch conditions and rushed construction, no meaningful data was acquired.
+%	\item \emph{Computational Physics:} Created a MATLAB script which simulated the motion of interacting charges
+%	\item \emph{Electronics:} Designed and constructed a robot that brewed tea
+	\end{achievements}
+
+
+
+\header{Skills}
+\begin{achievements}
+\item Experienced in software development in Python, C++, Java, MATLAB, Mathematica
+\item Familiarity with \LaTeX, Microsoft Excel, Wavemetrics Igor Pro, Microsoft Visual Studio.NET, Vim, Emacs
+\item Familiarity with Unix Bash shell (Linux Ubuntu, Scientific Linux) and Windows 7  \& 8
+\end{achievements}
+
+\header{Honors and Awards}
+\begin{achievements}
+\item Awarded the President's Award for Outstanding Academic Achievement from Whitworth University in 2014
+\item Awarded the Johnston-Hansen Foundation Scholarship from Whitworth University in 2013
+\item Awarded the Carl Hansen Pre-Engineering Scholarship from Whitworth University in 2011 and 2012
+\item Awarded the Mathematics/Computer Science Departmental Scholarship from Whitworth University in 2012
+\item Member of the Dean's Honor Roll and Laureate Society for all completed semesters at Whitworth University
+\end{achievements}
+
+%\header{Extracurricular Activities}
+%\employer{Whitworth Swing and Ballroom Dance Club}{Fall 2010 - Present}
+%\position{President}{(Fall 2012 - Present)}
+%\begin{worklist}
+%\item Coordinate and administer weekly and special club events
+%\item Manage club finances
+%\end{worklist}
+%
+%
+%\position{Vice President}{(Fall 2010 - Spring 2012)}
+%\begin{achievements}
+%\item Publicized and helped plan club events
+%\end{achievements}
+
+
+\end{document}
+
