@@ -1,0 +1,83 @@
+\documentclass[aasms,12pt]{article}
+\usepackage{natbib}
+\setlength{\bibsep}{0pt plus 0.3ex}
+\usepackage{sectsty}
+
+\sectionfont{\normalsize}
+\usepackage[margin=1in]{geometry}
+%\citestyle{aa}
+\newcommand{\sol}{\ensuremath{\odot}}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % sets both header and footer to nothing
+\renewcommand{\headrulewidth}{0pt}
+\lfoot{Research Proposal}
+\cfoot{\thepage}
+\rfoot{Evan Anders, NASA NESSF}
+
+
+
+
+\begin{document}
+\begin{center}
+   \Large\textbf{Working Title}\\
+   \vspace{0.4cm}
+   \large{Evan Anders}\\
+   \vspace{0.4cm}
+   \normalsize\textit{Advisor: Benjamin Brown}\\
+   \normalsize\textit{LASP, University of Colorado at Boulder}\\
+\end{center}
+
+
+
+\abstract{Fill this later}
+
+
+\section{Outline (to remove later)}
+\begin{itemize}
+\item ``The Sun is magnetically active, and this affects our technological
+	society..."
+\item Talk about the history of solar magnetic simulations.  Show the results that
+	they have achieved (wreaths of magnetism are maintained by the convective
+	zone alone, most are really high rotation rate but that's probably
+	wrong now, yadda yadda...). 
+\item Talk about how my simulations proposed with enrich that history of
+	simulations (e.g. there's been the ``assumption'' almost that the
+	toroidal field is made in the tachocline, and this will help to distinguish
+	whether or not that's the truth in an actual ``laboratory''.
+\item Talk about the tools that will be used in the simulations.  We have ASH.
+	Maybe we'll use Dedalus?
+\item Talk about how, once this matter is settled, we'll bridge the gap towards
+	``observables'' by extending simulations to the solar surface at the
+	resolution of supergranulation.  After running simulations that encompass
+	``important'' characteristics of the surface (on our length scales),
+	we'll do post-processing in order to convert our simulations into
+	``observables,'' and see if such observables look like anything that
+	(X, Y, Z) sattelites could detect/have detected.  This is a (possible)
+	glimpse at what happens underneath the surface of the sun.
+\item Mention the NASA strategic/science plans and exactly which points of them
+	we're fitting into, here.
+\end{itemize}
+
+
+
+\section{Intro}
+(I'll take this part from Ben's past work tomorrow when I have an ounce of energy).
+
+
+
+
+Sources and stuff below so I can see formatting!
+
+
+\nocite{*}
+\bibliographystyle{apj}
+\begingroup
+\renewcommand{\section}[2]{}%
+\begin{footnotesize}
+\bibliography{biblio}
+\end{footnotesize}
+\endgroup
+\end{document}
