@@ -3,6 +3,7 @@
 \setlength{\bibsep}{0pt plus 0.3ex}
 \usepackage{sectsty}
 \usepackage{graphicx}
+\usepackage{epstopdf}
 \usepackage[skip=2pt,font=small]{caption}
 \captionsetup{width=\textwidth}
 
@@ -96,18 +97,19 @@ Traditional models of the solar dynamo, namely Babcock-Leighton flux-transport
 dynamo models and interface dynamo models, have stated that the
 tachocline drives the production of the toroidal magnetic   
 fields which fuel the solar dynamo and manifest at the solar surface as
-sunspots (\citealt{Toomre2009}).  In such models, magnetic fields generated
+sunspots and active regions (\citealt{Toomre2009}).  In such models, 
+magnetic fields generated
 in the convective zone are transported inward to the tachocline, where
 magnetic wreaths are built before buoyantly 
 rising to the solar surface.
 
-Numerically simulating the solar environment requires working with wide ranges
+Numerically modeling the solar environment requires working with wide ranges
 of spatial and temporal timescales, which is one of the main sources of
 difficulty in creating meaningful simualtions.  Regardless of this, the
 underlying equations at the heart of these magnetohydrodynamic (MHD) simulations
 are quite simple, expressing conservation of mass, momentum, and energy and
 accounting for magnetic induction (\citealt{Charbonneau2014}).  Most simulations
-have modelled stars with higher rotation rates than the sun, as the strength
+have studied stars with higher rotation rates than the sun, as the strength
 of the magnetic dynamo increases with increasing rotation rate (see Fig.
 \ref{wreaths}a).  Such simulations
 have largely informed solar dynamo theory and have even generated 
@@ -118,8 +120,9 @@ such as those shown in Fig. \ref{wreaths}b\&c.
 In the context of accepted dynamo theory, an unsettling result has arisen
 in recent simulations of Sun-like stars: there is a disagreement
 regarding the necessity of the tachocline
-in sustaining the solar magnetic dynamo.  Stable solar dynamos have been
-created in 3-D numerical simulations both with
+in sustaining the solar magnetic dynamo.  Solar-like dynamos
+with cycles  have been
+achieved in 3-D numerical simulations both with
 (\citealt{ghizaru2010, racine2011})
 and without (\citealt{brown2011, nelson2013}) the presence of a tachocline. This
 begs the fundamental question: is the tachocline a necessary ingredient in the
@@ -135,17 +138,19 @@ of solar convection simulate Sun-\emph{like} stars rather than the Sun
 itself.  Such simulations model starts with greater rotation rates and greater
 convective flow velocities than our sun.  It has recently been discovered
 that these simulations may not accurately capture the physics at work
-in the Sun as they assume much larger amplitudes of large scale convective
+in the Sun as they self-consistently achieve much larger amplitudes of 
+large scale convective
 motions than those that are actually present in the Sun
 (\citealt{lord2014}).  Such a discovery calls for a new set of solar 
-numerical simulations with a more accurate description of convective flows
-than that which has existed in previous simulations.
+numerical simulations with a more accurate description of convective flows.
 
-Through lowering the stellar rotation rate to that of the solar rotation rate
-and decreasing the amplitudes of convective motions within modeled solar
-convection zones, it is now possible to gain an understanding of the physics at
-work within the Sun itself through simulations, rather than just sun-like
-stars.
+The Rossby number, the ratio of convective timescales to rotation timescales,
+appears to control the nature of global-scale dynamo action.  At low Rossby
+number, cycles and global organization emerge self-consistently.  By lowering
+the convective amplitudes, we can achieve the low Rossby regime at solar
+parameters.  This allows us to explore the physics of the global-dynamo action
+in the Sun itself, rather than making inferences about the solar dynamo from
+rapidly rotating solar-like stars.
 Furthermore, while simulations of stellar magnetic dynamos have proven
 irreplaceable in gaining insight into the structure and evolution of 
 long-term cycles, they fail to compare to \emph{in-situ} measurements
@@ -165,6 +170,8 @@ dynamo simulations and direct observations of solar activity.
 	periods (\citealt{Pizzolato2003}).  (b) Toroidal wreaths of magnetism
 	obtained through numerical simulations with the ASH code which show a
 	clear polarity inversion (c) over long time scales.
+	The global scale fields in the simulation cyclically reverse every 5 years
+	(Brown et al 2011).
         \label{wreaths}}
 \end{figure}
 
@@ -173,15 +180,19 @@ dynamo simulations and direct observations of solar activity.
 I propose a set of hydrodynamical simulations of the Sun's convective zone
 which test the role of a tachocline in the generation of a solar magnetic 
 dynamo.  These simulations will model the majority of the solar convective
-zone, from its base around $R = 0.713R_{\odot}$ up into the base of the outer
+zone, from its base up into the base of the outer
 shear layer, stopping
 around $R = 0.97R_{\odot}$.  These simulations will include identical rotation
 rates and convective timescales, but one simulation will include the shear
-effects of the tachocline and one simulation will not.
+effects of the tachocline by extending down to about 0.5 $R_{\odot}$
+and one simulation will not by stopping at the base of the convective zone
+around 0.713 $R_{\odot}$.  The background stellar structure (taken from a MESA
+solar model) will be otherwise identical.
 As dynamo theory champions the tachocline as the seat of the toroidal component
 of the solar magnetic field, it is time to put this theory to the test.
-The likeness of these simulations will allow for a direct comparison of their
-results, allowing a certainty regarding the role---or lack thereof---of the
+By building two otherwise identical siulations that do or do not include the tachocline,
+we can directly test this theory, and we will achieve certainty regarding the role---or 
+lack thereof---of the
 tachocline in generating and maintaining the solar dynamo.
 
 I will use the widely-known Anelastic Spherical Harmonic (ASH, 
@@ -190,7 +201,10 @@ advisor, Ben Brown, to create my simulations.  The use of a well-established
 code such as ASH will allow me to
 efficiently model the solar convective zone in spherical coordinates and gain
 and understanding of the physics driving the solar dynamo without having to
-worry about generating a fully functional modelling suite.  Naturally, work
+worry about generating a fully functional modelling suite.  The ASH code is the
+current state-of-the-art code for modelling the global solar dynamo 
+(Miesch \& Toomre 2009, Brun, Miesch \& Toomre 2011; Alvan, Brun \& Mathis 2014).
+Naturally, work
 of this magnitude requires access to massively parallel computing resources.
 As a CU Boulder student, I have access to the school's local supercomputer,
 \emph{Janus}.  Additionally, I will work with Ben Brown to acquire CPU time on
@@ -238,16 +252,20 @@ they have characteristic length scales roughly two orders of magnitude apart).
 Second, the computational load that would be required to resolve granular scales
 would push the number of CPU hours required for a project of this magnitude
 past that which is feasible to acquire on state-of-the-art machines.
+Capturing supergranular scales at the photosphere will allow us to explore the
+emergence of active regions and their coupling to the deep magnetism.
 
 Numerous post-processing techniques would be used on the photospheric data 
 given by these simulations in order to create synthetic observables.
 Atmospheric and radiative transfer models would be used to transform simulation
 data (which is known precisely in terms of fields and velocities) into
-observable phenomena (namely, sunspots). 
-Presumably, simulations
+observable phenomena such as irradiance maps, sunspots, and detailed synthetic
+line profiles in the atmosphere, such as those used by HMI on SDO for magnetic
+mapping.  Presumably, simulations
 which accurately capture the physics at work within the solar convective zone
 will create patterns similar to those observed at the solar surface.  If
-simulated sunspots behave similarly to real sunspots, then we know that our
+simulated sunspots and active regions behave similarly to those observed at the
+solar photosphere, then we know that our
 theory of the dynamo is working properly and we will have taken a step towards
 being able to predict solar weather through pattern recognition.
 
