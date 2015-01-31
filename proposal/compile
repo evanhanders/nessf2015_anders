@@ -1,0 +1,4 @@
+gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=Andres_full_NESSF_proposal.pdf -dBATCH \
+proposal_nessf2015_EvanAnders.pdf \
+../cv/brown_NASA_1pp.pdf \
+../cv/evan_nessf_cv.pdf
