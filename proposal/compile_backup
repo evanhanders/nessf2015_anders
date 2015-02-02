@@ -2,7 +2,8 @@ gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=../temp.pdf -dBATCH \
 proposal_nessf2015_EvanAnders.pdf \
 ../timeline/timeline.pdf \
 ../cv/brown_NASA_1pp.pdf \
-../cv/evan_nessf_cv.pdf 
+../cv/evan_nessf_cv.pdf \
+../letter/Evan_Anders_NESSF_letter_signed.pdf
 
 pdftk ../temp.pdf ../transcripts/transcripts.pdf cat output ../Anders_full_NESSF_proposal.pdf
 
